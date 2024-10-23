@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiEntryClearBroken.MainPage">
+
+    <VerticalStackLayout Margin="12,0" HorizontalOptions="Center">
+        <Label Text="The below Entry control has the property ClearButtonVisibility set to 'Never'." />
+        <Label Text="However, by wrapping the entry in other controls, it is pretty easy to break it again." />
+        <Label Text="Simply insert any characters in the Entry and focus it, the Clear 'X' will be displayed anyway :/ " />
+        <HorizontalStackLayout HorizontalOptions="Center">
+            <Grid
+                ColumnDefinitions="auto,*,auto"
+                MinimumWidthRequest="250"
+                Margin="0,12"
+                HorizontalOptions="CenterAndExpand">
+                <Entry
+                    x:Name="EntryField"
+                    Grid.Column="1"
+                    BackgroundColor="Transparent"
+                    ClearButtonVisibility="Never"
+                    FontSize="16"
+                    ReturnType="Search"
+                    IsSpellCheckEnabled="false"
+                    IsTextPredictionEnabled="false"
+                    Placeholder="Placeholder"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Center"
+                    MinimumWidthRequest="250"
+                    VerticalTextAlignment="Center" />
+            </Grid>
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>
